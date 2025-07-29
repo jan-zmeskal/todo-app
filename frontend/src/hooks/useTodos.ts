@@ -55,18 +55,9 @@ export function useTodos() {
   }, [fetchTasks])
 
   const deleteTask = useCallback(async (taskId: string) => {
-    try {
-      const response = await fetch(`/api/tasks/${taskId}`, {
-        method: 'DELETE',
-      })
-      if (!response.ok) {
-        throw new Error('Failed to delete task')
-      }
-      await fetchTasks()
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to delete task')
-    }
-  }, [fetchTasks])
+    console.log("Delete task: " + taskId)
+    alert("not implemented")
+  }, [])
 
   return {
     tasks,
