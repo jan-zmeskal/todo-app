@@ -24,9 +24,8 @@ def create_task():
             'id': task_id,
             'title': data['title'],
             'description': data.get('description', ''),
-            'completed': False,
-            'created_at': datetime.utcnow().isoformat(),
-            'updated_at': datetime.utcnow().isoformat()
+            'created_at': datetime.now().isoformat(),
+            'updated_at': datetime.now().isoformat(),
         }
 
         tasks[task_id] = task
@@ -69,7 +68,7 @@ def delete_task(task_id):
         return jsonify({
             'message': 'Task deleted successfully',
             'task': deleted_task
-        }), 200
+        }), 204
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
