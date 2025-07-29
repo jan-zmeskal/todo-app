@@ -4,8 +4,17 @@ import uuid
 
 app = Flask(__name__)
 
-# In-memory storage for tasks (in production, use a proper database)
+# In-memory storage (in production, use a proper database)
 tasks = {}
+task_suggestions = [
+    "buy milk",
+    "work out",
+    "learn python",
+    "work out",
+    "drink enough water",
+    "work out",
+    "learn python",
+]
 
 
 @app.route('/api/tasks', methods=['POST'])
