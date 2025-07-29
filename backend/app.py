@@ -69,7 +69,7 @@ def list_tasks():
 def delete_task(task_id):
     """Delete a task by ID"""
     try:
-        if task_id not in tasks:
+        if task_id in tasks:
             return jsonify({'error': 'Task not found'}), 404
 
         deleted_task = tasks.pop(task_id)
